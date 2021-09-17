@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url();
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 505px;
+  height: 490px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 130px auto;
+  padding: 10px;
+  background-color: rgb(194, 187, 187);
+  border-radius: 15px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.atualizacao {
+  margin-top: 25px;
+  font-size: 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.real {
+  margin-bottom: 10px;
+}
+
+.button button {
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.outras-moedas {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+label {
+  font-weight: bolder;
+}
+
+input {
+  text-align: center;
+  padding: 3px;
+  margin-top: 5px;
+}
+
+.real,
+.dolar,
+.euro,
+.bitcoin,
+.ethereum {
+  text-align: center;
+}
+
+.conversao {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  font-weight: lighter;
+  margin-top: 5px;
+}
+
+img {
+  width: 80px;
+  height: 40px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+}
