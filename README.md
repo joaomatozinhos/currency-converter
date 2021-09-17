@@ -1,4 +1,4 @@
-# currency-converter
+# Currency Converter
 Project of a currency converter. It is possible to convert from Real to Dollar, Euro, Bitcoin and Ethereum, besides showing how much each one of these currencies is worth in Real.
 
 With this project I improved my JavaScript knowledge.
