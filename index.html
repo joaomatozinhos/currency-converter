@@ -19,7 +19,7 @@
         <h1>Conversor de Moedas</h1>
         <p>Faça a conversão de Real para outras moedas rapidamente!</p>
         <div class="atualizacao">
-          <p id="atualizacao"></p>
+          <p id="atualizacao">-</p>
         </div>
       </div>
 
@@ -45,22 +45,22 @@
         <div class="dolar">
           <label for="dolar">Valor em Dólar</label><br />
           <input type="number" id="dolar" readonly placeholder="US$" />
-          <p class="conversao">US$ 1 = R$ 5,26</p>
+          <p id="dolarPrice" class="conversao"></p>
         </div>
         <div class="euro">
           <label for="euro">Valor em Euro</label><br />
           <input type="number" id="euro" readonly placeholder="€" />
-          <p class="conversao">1 € = R$ 6,18</p>
+          <p id="euroPrice" class="conversao"></p>
         </div>
         <div class="bitcoin">
           <label for="bitcoin">Valor em Bitcoin</label><br />
           <input type="number" id="bitcoin" readonly placeholder="BTC" />
-          <p class="conversao">1 BTC = R$ 252.350,79</p>
+          <p id="bitcoinPrice" class="conversao"></p>
         </div>
         <div class="ethereum">
           <label for="ethereum">Valor em Ethereum</label><br />
           <input type="number" id="ethereum" readonly placeholder="ETH" />
-          <p class="conversao">1 ETH = R$ 18.975,33</p>
+          <p id="ethereumPrice" class="conversao"></p>
         </div>
       </div>
     </div>

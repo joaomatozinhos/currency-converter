@@ -1,19 +1,49 @@
-var buttonConverter = document.getElementById('button')
-buttonConverter.addEventListener('click', converter)
+const urlAPI =
+  'https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL,ETH-BRL'
+let real, dolar, euro, bitcoin, ethereum, date
 
-function converter() {
-  let real = document.getElementById('real').value
-  let dolar = (real / 5.26).toFixed(2)
-  let euro = (real / 6.18).toFixed(2)
-  let bitcoin = (real / 252350.79).toFixed(8)
-  let ethereum = (real / 18975.33).toFixed(6)
+fetch(urlAPI)
+  .then(response => response.json())
+  .then(data => {
+    getData(data)
+  })
 
-  document.getElementById('dolar').value = dolar
-  document.getElementById('euro').value = euro
-  document.getElementById('bitcoin').value = bitcoin
-  document.getElementById('ethereum').value = ethereum
+function getData(data) {
+  dolar = data.USDBRL.ask
+  euro = data.EURBRL.ask
+  bitcoin = data.BTCBRL.ask
+  ethereum = data.ETHBRL.ask
+  date = data.USDBRL.create_date
+
+  let dolarPrice = document.getElementById('dolarPrice')
+  let euroPrice = document.getElementById('euroPrice')
+  let bitcoinPrice = document.getElementById('bitcoinPrice')
+  let ethereumPrice = document.getElementById('ethereumPrice')
+
+  dolarPrice.innerHTML = `US$ 1 = R$ ${dolar}`
+  euroPrice.innerHTML = `1 € = R$ ${euro}`
+  bitcoinPrice.innerHTML = `1 BTC = R$ ${bitcoin}`
+  ethereumPrice.innerHTML = `1 ETH = R$ ${ethereum}`
 }
 
-document.getElementById(
-  'atualizacao'
-).innerHTML = `Valores atualizados em Thu Sep 16 2021 14:19:46`
+var buttonConvert = document.getElementById('button')
+buttonConvert.addEventListener('click', convert)
+
+function convert() {
+  real = document.getElementById('real').value
+  let USDBRL = (real / dolar).toFixed(2)
+  let EURBRL = (real / euro).toFixed(2)
+  let BTCBRL = (real / bitcoin).toFixed(8)
+  let ETHBRL = (real / ethereum).toFixed(6)
+
+  document.getElementById('dolar').value = USDBRL
+  document.getElementById('euro').value = EURBRL
+  document.getElementById('bitcoin').value = BTCBRL
+  document.getElementById('ethereum').value = ETHBRL
+}
+
+setTimeout(() => {
+  document.getElementById(
+    'atualizacao'
+  ).innerHTML = `Valores atualizados em ${date}`
+}, 1000)
